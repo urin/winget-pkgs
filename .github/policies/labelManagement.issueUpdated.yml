@@ -197,6 +197,24 @@ configuration:
           - addLabel:
               label: Needs-Attention # This will automatically assign the ICM Users
       - description: >-
+          If an author agrees to the CLA on a Pull Request
+          * Remove the Needs-CLA Label
+        if:
+          - or:
+              - payloadType: Pull_Request_Review
+              - payloadType: Pull_Request_Review_Comment
+              - payloadType: Issue_Comment
+          - isActivitySender:
+              issueAuthor: True
+          - hasLabel:
+              label: Needs-CLA
+          - commentContains:
+              pattern: '@microsoft-github-policy-service agree'
+              isRegex: False
+        then:
+          - removeLabel:
+              label: Needs-CLA
+      - description: >-
           When changes are requested on a pull request
           * Disable automerge
           * Label with Changes-Requested
@@ -346,6 +364,8 @@ configuration:
           - removeLabel:
               label: Unexpected-File
           - removeLabel:
+              label: Validate-Domain-Installer
+          - removeLabel:
               label: Validation-Completed
           - removeLabel:
               label: Validation-Defender-Error
@@ -388,7 +408,7 @@ configuration:
                   pattern: 'Validation Pipeline Run'
                   isRegex: false
               - commentContains:
-                  pattern: '@[Ww]ingetbot\s[Rr]un'
+                  pattern: '(?in)@wingetbot\srun'
                   isRegex: true
           - not:
               isActivitySender:

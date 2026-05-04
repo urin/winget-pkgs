@@ -9,14 +9,14 @@ ProductCode: kreversi
 Installers:
 - Architecture: x64
   Scope: user
-  InstallerUrl: https://cdn.kde.org/ci-builds/games/kreversi/master/windows/kreversi-master-867-windows-cl-msvc2022-x86_64.exe
-  InstallerSha256: 06E0F283D5BCA378724B55A2E3DF041EFC1F8F26C5F360A15F06B5615EF349FF
+  InstallerUrl: https://cdn.kde.org/ci-builds/games/kreversi/master/windows/kreversi-master-880-windows-cl-msvc2022-x86_64.exe
+  InstallerSha256: 5611EF5B7CD90E79CABC52B33A8BD432F218C501ED9D507A4A404E258648276C
   InstallerSwitches:
     Custom: /CurrentUser
 - Architecture: x64
   Scope: machine
-  InstallerUrl: https://cdn.kde.org/ci-builds/games/kreversi/master/windows/kreversi-master-867-windows-cl-msvc2022-x86_64.exe
-  InstallerSha256: 06E0F283D5BCA378724B55A2E3DF041EFC1F8F26C5F360A15F06B5615EF349FF
+  InstallerUrl: https://cdn.kde.org/ci-builds/games/kreversi/master/windows/kreversi-master-880-windows-cl-msvc2022-x86_64.exe
+  InstallerSha256: 5611EF5B7CD90E79CABC52B33A8BD432F218C501ED9D507A4A404E258648276C
   InstallerSwitches:
     Custom: /AllUsers
 ManifestType: installer
